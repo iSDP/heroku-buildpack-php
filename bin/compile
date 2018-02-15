@@ -193,7 +193,7 @@ export -f composer
 status "Listing installed extensions"
 $engine_r 'foreach(get_loaded_extensions() as $module){echo $module."\r\n";};'
 status "Checking Argon2i"
-$engine_r 'echo defined("PASSWORD_ARGON2I") ? "Argon2i Available" : "Argon2i Not Available"'
+$engine_r 'echo (defined("PASSWORD_ARGON2I") ? "Argon2i Available" : "Argon2i Not Available");'
 status "Installing dependencies..."
 
 # check if we should use a composer.phar version bundled with the project
